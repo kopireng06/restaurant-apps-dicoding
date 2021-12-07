@@ -8,7 +8,7 @@ const DetailRestaurant = {
   async render() {
     return `
         <div class="bg-orange" style="height:85px;"></div>
-        <main id="maincontent" class="detail-restaurant container">
+        <main id="maincontent" tabindex="0" class="detail-restaurant container">
             <h2 class="nunito-font">List Restaurant</h2>
         </main>
     `;
@@ -26,6 +26,12 @@ const DetailRestaurant = {
     const nameInput = document.querySelector('#name');
     const reviewInput = document.querySelector('#review');
     const countReview = document.querySelector('#count-review');
+    const skipLinkElem = document.querySelector('.skip-link');
+    const mainContent = document.querySelector('#maincontent');
+    skipLinkElem.addEventListener('click', (e) => {
+      e.preventDefault();
+      mainContent.focus();
+    });
     AddReviewInitiator.init({
       id: url.id,
       submitReview,
