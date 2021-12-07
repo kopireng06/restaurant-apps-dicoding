@@ -3,7 +3,7 @@
     "short_name": "Tombo Luwe",
     "description": "The quickest solution when your hungry",
     "start_url": "/index.html",
-    "display": "fullscreen",
+    "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#d84315",
     "icons": [
