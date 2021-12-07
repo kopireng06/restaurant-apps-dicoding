@@ -146,6 +146,7 @@ li > .nav-link-sidebar {
     border-radius: 10px;
     width: 100%;
     margin-top: 20px;
+    height: 44px;
 }
 .btn-remove-favorites {
     color: white;
@@ -330,6 +331,7 @@ input {
     border: 1px solid #ccc;
     border-radius: 10px;
     width: 100%;
+    min-height: 44px;
 }
 input[type=submit] {
     color: #fff;
