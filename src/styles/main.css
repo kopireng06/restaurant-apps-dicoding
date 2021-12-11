@@ -107,6 +107,10 @@ li > .nav-link-sidebar {
     font-size: 20px;
     text-align: center;
 }
+.jumbotron picture {
+    height: 100%;
+    width: 100%;
+}
 .img-jumbotron {
     object-fit: cover;
     object-position: center;
@@ -119,6 +123,12 @@ li > .nav-link-sidebar {
     gap: 20px;
 }
 .list-restaurant h2 {
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: center;
+    padding: 25px;
+}
+.list-restaurant p {
     grid-column-start: 1;
     grid-column-end: 2;
     text-align: center;
@@ -374,6 +384,10 @@ input,textarea:focus{
         grid-column-start: 1;
         grid-column-end: 3;
     }
+    .list-restaurant p {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
     #menu-button {
         display: none;
     }
@@ -408,6 +422,10 @@ input,textarea:focus{
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
     .list-restaurant h2 {
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+    .list-restaurant p {
         grid-column-start: 1;
         grid-column-end: 4;
     }

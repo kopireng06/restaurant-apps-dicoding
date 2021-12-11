@@ -1,4 +1,4 @@
-import { createCardRestaurant } from '../templates/template-creator';
+import { createCardRestaurant, createInformationEmptyFavoriteRestaurants } from '../templates/template-creator';
 import FavoriteRestaurant from '../../data/indexed-db';
 
 const Favorites = {
@@ -6,7 +6,7 @@ const Favorites = {
     return `
         <div class="bg-orange" style="height:85px;"></div>
         <main id="maincontent" tabindex="0" class="list-restaurant container">
-            <h2 class="nunito-font">My Favorite Restaurants</h2>
+            <h2 id="title-list-restaurant" class="nunito-font">My Favorite Restaurants</h2>
         </main>
     `;
   },
@@ -14,6 +14,9 @@ const Favorites = {
   async afterRender() {
     const restaurants = await FavoriteRestaurant.getAllRestaurants();
     const restaurantContainer = document.querySelector('.list-restaurant');
+    if (restaurants.length === 0) {
+      restaurantContainer.innerHTML += createInformationEmptyFavoriteRestaurants();
+    }
     restaurants.forEach((restaurant) => {
       restaurantContainer.innerHTML += createCardRestaurant(restaurant);
     });

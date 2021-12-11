@@ -1,15 +1,16 @@
 import UrlParser from '../../routes/url-parser';
 import DicodingRestaurant from '../../data/restaurant-dicoding-api';
 import { createDetailRestaurant } from '../templates/template-creator';
-import LikeButtonInitiator from '../../utils/like-button-initiator';
+import LikeButtonPresenter from '../../utils/like-button-presenter';
 import AddReviewInitiator from '../../utils/add-review-initiator';
+import FavoriteRestaurant from '../../data/indexed-db';
 
 const DetailRestaurant = {
   async render() {
     return `
         <div class="bg-orange" style="height:85px;"></div>
         <main id="maincontent" tabindex="0" class="detail-restaurant container">
-            <h2 class="nunito-font">List Restaurant</h2>
+            <h2 id="title-list-restaurant" class="nunito-font">List Restaurant</h2>
         </main>
     `;
   },
@@ -40,8 +41,9 @@ const DetailRestaurant = {
       reviewInput,
       countReview,
     });
-    LikeButtonInitiator.init({
+    LikeButtonPresenter.init({
       likeButtonWrapper: wrapperButtonFavorites,
+      favoriteRestaurant: FavoriteRestaurant,
       restaurant: {
         id: restaurant.id,
         name: restaurant.name,

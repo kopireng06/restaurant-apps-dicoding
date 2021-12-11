@@ -3,7 +3,7 @@ const createCardRestaurant = ({
 }) => `
     <a href="#/detail/${id}" tabindex="0" id=${id} class="card-restaurant">
         <figure class="card-img">
-            <img src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
+            <img src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" alt="${name}">
             <div class="flex card-location-wrapper">
                 <span class="card-location rubik-font">
                     ${city}
@@ -24,7 +24,10 @@ const createDetailRestaurant = ({
         <div class="flex">
             <div class="wrapper-detail-img">
                 <figure class="detail-img w-full">
-                    <img class="h-full w-full object-cover" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
+                    <picture>
+                      <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${pictureId}">
+                      <img class="h-full w-full object-cover" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
+                    </picture>
                 </figure>
                 <div id="wrapper-button-favorites"></div>
             </div>
@@ -96,7 +99,7 @@ const createDetailRestaurant = ({
                             </div>
                         `).join(''))()
 }
-                
+
             </div>
             <div class="wrapper-send-review nunito-font">
                 <h3 style="margin-bottom: 10px;">Send your review</h3>
@@ -132,9 +135,14 @@ const createRemoveFavoritesButton = () => `
     <button class="btn-remove-favorites">Remove from favorites</button>
 `;
 
+const createInformationEmptyFavoriteRestaurants = () => `
+    <p class="restaurant-item__not__found">there is no restaurant that you like</p>
+`;
+
 export {
   createCardRestaurant,
   createDetailRestaurant,
   createAddFavoritesButton,
   createRemoveFavoritesButton,
+  createInformationEmptyFavoriteRestaurants,
 };

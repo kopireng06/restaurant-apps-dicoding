@@ -5,7 +5,10 @@ const Home = {
   async render() {
     return `
         <figure class="jumbotron">
-            <img class="img-jumbotron" src="images/heros/hero-image_4.jpg" alt="tombo luwe picture">
+            <picture>
+              <source media="(max-width: 600px)" srcset="images/heros/hero-image_4_small.jpg">
+              <img class="img-jumbotron" src="images/heros/hero-image_4.jpg" alt="tombo luwe picture">
+            </picture>
             <div class="bg-jumbotron"></div>
             <h1 class="nunito-font">Quickest Solution When Your Hungry</h1>
         </figure>
