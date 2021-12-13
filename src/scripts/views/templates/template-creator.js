@@ -3,7 +3,7 @@ const createCardRestaurant = ({
 }) => `
     <a href="#/detail/${id}" tabindex="0" id=${id} class="card-restaurant">
         <figure class="card-img">
-            <img src="https://restaurant-api.dicoding.dev/images/small/${pictureId}" alt="${name}">
+            <img class="lazyload" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
             <div class="flex card-location-wrapper">
                 <span class="card-location rubik-font">
                     ${city}
@@ -24,10 +24,7 @@ const createDetailRestaurant = ({
         <div class="flex">
             <div class="wrapper-detail-img">
                 <figure class="detail-img w-full">
-                    <picture>
-                      <source media="(max-width: 600px)" srcset="https://restaurant-api.dicoding.dev/images/small/${pictureId}">
-                      <img class="h-full w-full object-cover" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
-                    </picture>
+                    <img class="h-full w-full object-cover" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
                 </figure>
                 <div id="wrapper-button-favorites"></div>
             </div>
