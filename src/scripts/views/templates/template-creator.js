@@ -3,7 +3,7 @@ const createCardRestaurant = ({
 }) => `
     <a href="#/detail/${id}" tabindex="0" id=${id} class="card-restaurant">
         <figure class="card-img">
-            <img class="lazyload" src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
+            <img class="lazyload" data-src="https://restaurant-api.dicoding.dev/images/medium/${pictureId}" alt="${name}">
             <div class="flex card-location-wrapper">
                 <span class="card-location rubik-font">
                     ${city}
