@@ -56,8 +56,8 @@ const AddReviewInitiator = {
     this._countReview.innerHTML = `(${responseReview.customerReviews.length})`;
     this._wrapperReview.innerHTML += `
             <div class="review">
-                <b>${addedReview.name}</b><span>(${addedReview.date})</span>
-                <p>
+                <b class="review-name">${addedReview.name}</b><span>(${addedReview.date})</span>
+                <p class="review-content">
                 ${addedReview.review}
                 </p>
                 <hr>

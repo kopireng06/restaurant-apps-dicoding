@@ -88,8 +88,8 @@ const createDetailRestaurant = ({
                 ${
   (() => customerReviews.map(({ name, review, date }) => `
                             <div class="review">
-                                <b>${name}</b><span>${date}</span>
-                                <p>
+                                <b class="review-name">${name}</b><span>${date}</span>
+                                <p class="review-content">
                                    ${review}
                                 </p>
                                 <hr>
